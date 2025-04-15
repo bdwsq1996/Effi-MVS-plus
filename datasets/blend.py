@@ -22,10 +22,7 @@ class MVSDataset(Dataset):
         super(MVSDataset, self).__init__()
         self.datapath = datapath
         self.mode = mode
-        if self.mode == "train":
-            self.listfile = os.path.join(self.datapath, "training_list.txt")
-        else:
-            self.listfile = os.path.join(self.datapath, "validation_list.txt")
+        self.listfile = listfile
         self.nviews = nviews
         self.ndepths = ndepths
         self.interval_scale = interval_scale
